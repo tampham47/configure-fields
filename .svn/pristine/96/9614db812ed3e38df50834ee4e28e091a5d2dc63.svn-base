@@ -1,0 +1,7 @@
+angular.module('site.templates', ['views/home/index.jade']);
+
+angular.module('views/home/index.jade', []).run(['$templateCache', function($templateCache) {
+	$templateCache.put('views/home/index.jade',
+		'<p>HOME</p>\n' +
+		'');
+}]);

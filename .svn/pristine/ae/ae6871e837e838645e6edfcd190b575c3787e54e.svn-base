@@ -1,0 +1,409 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0; border:none; text-decoration:none;}
+body{
+	background:#e6e7e9;
+	margin-bottom:200px;
+}
+.wraper{
+	width:100%;
+}
+.inerwraper{
+	margin:auto;
+	max-width:1280px;
+}
+/********************Header****************/
+.header{
+	width:100%;
+	background:#40b986;
+	display:table;
+}
+.socila{
+	float:left;
+	position:relative;
+	width:15%;
+}
+.socila ul{
+	margin:0;
+	padding:0;
+}
+.socila li{
+	float:left;
+	list-style:none;
+	padding:25px 5px;
+}
+.socila a{
+	text-decoration:none;
+}
+.log-container{
+	margin:auto;
+	width:43%;
+}
+.logo{
+	margin:auto;
+	width:304px;
+}
+.logo img{
+	padding:30px 0px 30px 0px;
+}
+.application{
+	float:right;
+	position:relative;
+	margin-bottom:20px;
+}
+.application ul{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.application li{
+	list-style:none;
+	margin:0px 10px;
+	display:inline-block;
+}
+.application a{
+	text-decoration:none;
+}
+.login p{
+	float:right;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:20px;
+	padding:25px;
+	color:#FFF;
+	margin:0;
+}
+.login-after p{
+	float:right;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:20px;
+	padding:10px 20px;
+	color:#FFF;
+	margin:0;
+}
+/********************Header2-responsive****************/
+.header-after{
+	width:100%;
+	background:#40b986;
+	position:fixed;
+	display:none;
+	top:0;
+	z-index:999;
+}
+.logo-after{
+	margin:auto;
+	width:129px;
+}
+.logo-after img{
+	padding:10px 0px;
+}
+.socila-after{
+	float:left;
+	position:relative;
+}
+.socila-after ul{
+	margin:0;
+	padding:0;
+}
+.socila-after li{
+	float:left;
+	list-style:none;
+	margin:17px 5px 0px 5px;
+}
+.socila-after a{
+	text-decoration:none;
+}
+.application-after{
+	float:right;
+	position:relative;
+	margin-top:10px;
+	width:225px;
+}
+.application-after-iner ul{
+	float:left;
+	margin:0;
+	padding:0;
+}
+.application-after li{
+	list-style:none;
+	margin:10px 0px 10px 65px;
+	display:table;
+	text-decoration:underline;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:15px;
+	color:#FFF;
+	cursor:pointer;
+}
+.drop-down{
+	position:absolute;
+	background:url(images/drop-down-box.png)/*tpa=http://cms888.parleylive.com/website/images/drop-down-box.png*/ no-repeat;
+	width:167px;
+	height:168px;
+	padding-top:25px;
+	display:none;
+	margin-top:30px;
+	clear:both;
+}
+.drop-down img{
+	margin:0px 0px 10px 12px;
+}
+/********************Navigaion****************/
+.main-navigation{
+	float:left;
+	width:100%;
+	background:#fff;
+	display:table;
+	border-bottom:2px solid #c3c3c3;
+}
+.navigation{
+	width:100%;
+	padding:10px 0px;
+}
+.navigation ul{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+.navigation li:nth-child(1){
+	padding:5px 10px;
+	list-style:none;
+	display:inline-block;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:18px;
+	line-height:25px;
+	border-bottom:1px solid #000;
+	cursor:pointer;
+}
+.navigation li:nth-child(2){
+	padding:5px 10px;
+	margin-left:20px;
+	list-style:none;
+	display:inline-block;
+	cursor:pointer;
+}
+/********************Content****************/
+.main-content{
+	margin:auto;
+	width:1003px;
+	display:table;
+	background:#f1f1f3;
+}
+.main-content-header{
+	float:left;
+	padding:20px 0px 0px 35px;
+	width:100%;
+	display:none;
+}
+.main-content-header h1{
+	font-family: "Microsoft YaHei" ! important;
+	font-size:25px;
+	color:#000;
+}
+.main-content1{
+	margin:200px auto;
+	width:1003px;
+	display:table;
+	background:#f1f1f3;
+}
+.right-area{
+	float:left;
+}
+.video-wraper-1{
+	float:left;
+	width:447px;
+	height:400px;
+	background:#FFF;
+	margin:35px 0px 0px 35px;
+	border-left:1px solid #f8f8f8;
+	border-right:1px solid #f8f8f8;
+	display:table;
+	clear:both;
+}
+.profile-area{
+	float:left;
+	margin:10px 15px 0px 15px;
+}
+.profile-area img{
+	float:left;
+}
+.profile-area h1{
+	float:left;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:20px;
+	color:#231f20;
+	padding:20px 0px 0px 10px;
+}
+.video-area{
+	float:left;
+	clear:both;
+	margin:10px 15px 0px 15px;
+}
+.detail-area{
+	float:left;
+	clear:both;
+	margin:10px 15px 0px 15px;
+	width:400px;
+}
+.detail-area p{
+	float:left;
+	width:419px;
+	color:#312d2e;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:15px;
+	padding-bottom:20px;
+}
+.time-function{
+	float:right;
+	color:#00a64f;
+}
+.left-area{
+	float:right;
+}
+.video-wraper-2{
+	float:left;
+	width:447px;
+	height:400px;
+	background:#FFF;
+	margin:35px 35px 0px 0px;
+	border-left:1px solid #f8f8f8;
+	border-right:1px solid #f8f8f8;
+	display:table;
+	clear:both;
+}
+.main-content2{
+	margin:auto;
+	width:1003px;
+	display:none;
+}
+.main-content22{
+	margin:200px auto;
+	width:1003px;
+	display:none;
+	background:#f1f1f3;
+}
+.images-main-area{
+	width:100%;
+	display:table;
+	background:#f1f1f3;
+}
+.image-wraper-1{
+	float:left;
+	width:478px;
+	background:#FFF;
+	margin:25px 0px 0px 10px;
+	border-left:1px solid #f8f8f8;
+	border-right:1px solid #f8f8f8;
+	display:table;
+	clear:both;
+	position:relative;
+}
+.images-area{
+	float:left;
+	margin:5px;
+	width:468px;
+}
+.images-area img{
+	float:left;
+}
+.images-area p{
+	float:left;
+	padding:10px 20px;
+	color:#5a5859;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:15px;
+	font-weight:bold;
+}
+.images-description{
+	color:#d2d4d3;
+}
+.images-area-more{
+	float:right;
+	margin:20px 15px 0px 0px;
+}
+.images-area-number{
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+.images-area-number p{
+	font-family: "Microsoft YaHei" ! important;
+	font-size:40px;
+	color:#000;
+	font-style:italic;
+}
+.image-wraper-2{
+	float:left;
+	width:478px;
+	background:#FFF;
+	margin:25px 10px 0px 0px;
+	border-left:1px solid #f8f8f8;
+	border-right:1px solid #f8f8f8;
+	display:table;
+	clear:both;
+	position:relative;
+}
+/************Footer******************/
+#footer-area{
+	width:100%;
+	background:url(images/foooter-bg_07.png)/*tpa=http://cms888.parleylive.com/website/images/foooter-bg_07.png*/right;
+	display:table;
+}
+.footer-area-fixed{
+	width:100%;
+	background:url(images/foooter-bg_07.png)/*tpa=http://cms888.parleylive.com/website/images/foooter-bg_07.png*/right;
+	display:table;
+	bottom:0;
+	left:0;
+	position:fixed;
+}
+.footer-logo{
+	float:left;
+	position:relative;
+	padding:20px 0px 0px 20px;
+}
+.footer-application{
+	float:right;
+	position:relative;
+	width:250px;
+	margin-top:-30px;
+}
+.footer-text{
+	margin:auto;
+	width:400px;
+}
+.footer-text p{
+	text-align:center;
+	padding:30px 0px 0px 0px;
+	color:#ffc217;
+	font-family: "Microsoft YaHei" ! important;
+	font-size:30px;
+}
+.foter-finish{
+	float:right;
+	margin-bottom:20px
+}
+.ios{
+	float:left;
+	margin-right:40px;
+	clear:both;
+}
+.ios p{
+	font-family: "Microsoft YaHei" ! important;	
+	font-size:15px;
+	color:#FFF;
+	text-align:center;
+	padding:5px 0px;
+}
+.androide{
+	float:left;
+}
+.androide p{
+	font-family: "Microsoft YaHei" ! important;
+	font-size:15px;
+	color:#FFF;
+	text-align:center;
+	padding:5px 0px;
+}
+.footer-text h1{
+	margin:auto;
+}
+.videolink{cursor:pointer;}

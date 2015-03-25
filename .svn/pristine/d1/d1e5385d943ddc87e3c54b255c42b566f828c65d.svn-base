@@ -1,0 +1,470 @@
+module.exports = function(grunt) {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    jade: {
+      compile: {
+        options: {
+          pretty: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'source/views',
+            src: ['*.jade'],
+            dest: 'public/',
+            ext: '.html'
+          }, {
+            expand: true,
+            cwd: 'source/views',
+            src: ['**/*.jade', '!*.jade', '!mixins/*', '!modules/*'],
+            dest: 'public/views/',
+            ext: '.html'
+          }
+        ]
+      }
+    },
+    less: {
+      build: {
+        options: {
+          compress: false
+        },
+        files: [
+          {
+            'public/css/style.css': 'source/assets/css/style.less'
+          }
+        ]
+      }
+    },
+    coffee: {
+      options: {
+        bare: true,
+        sourceMap: true
+      },
+      all: {
+        expand: true,
+        cwd: 'source/',
+        src: ['controllers/**/*.coffee', 'commons/**/*.coffee', 'directives/**/*.coffee', 'interfaces/**/*.coffee', 'models/**/*.coffee'],
+        dest: 'public/',
+        ext: '.js'
+      }
+    },
+    mapcat: {
+      all: {
+        src: ['public/controllers/**/index.js.map', 'public/controllers/**/*.js.map'],
+        dest: 'public/scripts.js'
+      },
+      options: {
+        oldRoot: 'source/controllers/',
+        newRoot: 'src'
+      }
+    },
+    html2js: {
+      options: {
+        base: 'source',
+        module: 'site.templates',
+        indentString: '\t',
+        quoteChar: "'"
+      },
+      all: {
+        src: [
+          'source/views/**/*.html',
+          '!source/views/*.html',
+          '!source/views/modules',
+          '!source/views/mixins'],
+        dest: 'public/js/templates.js'
+      }
+    },
+    concat: {
+      dist: {
+        files: [
+          {
+            'public/js/modernizr.js': 'source/assets/js/libs/modernizr-2.7.1.js',
+            'public/js/libs.js': [
+              // 'source/assets/js/libs/jquery-1.11.1.js',
+              'source/assets/js/libs/angular.js',
+              'source/assets/js/libs/angular-route.js',
+              'source/assets/js/libs/angular-loader.js',
+              'source/assets/js/libs/angular-resource.js',
+              'source/assets/js/libs/angular-sanitize.js',
+              'source/assets/js/libs/angular-animate.js',
+              'source/assets/js/libs/plugins/*.js'],
+            'public/js/l10n.js': 'source/assets/js/l10n.js',
+            'public/js/plugins.js': [
+              'source/assets/js/settings.js',
+              'source/assets/js/plugins/*.js'],
+            'public/js/scripts.js': [
+              'source/controllers/**/index.js',
+              'source/controllers/**/*.js',
+              'source/commons/**/*.js',
+              'source/services/**/*.js',
+              'source/directives/**/*.js',
+              'source/interfaces/**/*.js']
+          }
+        ]
+      }
+    },
+    copy: {
+      packages: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/packages/',
+            src: '**/*',
+            dest: 'public/packages/'
+          }
+        ]
+      },
+      ajax: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/views/ajax/',
+            src: '**/*',
+            dest: 'public/ajax/'
+          }
+        ]
+      },
+      images: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/images/',
+            src: '**/*',
+            dest: 'public/images/'
+          }
+        ]
+      },
+      icons: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/icons/',
+            src: '**/*',
+            dest: 'public/'
+          }
+        ]
+      },
+      videos: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/videos/',
+            src: '**/*',
+            dest: 'public/videos/'
+          }
+        ]
+      },
+      xml: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/xml/',
+            src: '**/*',
+            dest: 'public/xml/'
+          }
+        ]
+      },
+      fonts: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/fonts/',
+            src: '**/*',
+            dest: 'public/fonts/'
+          }
+        ]
+      },
+      swf: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/swf/',
+            src: '**/*',
+            dest: 'public/swf/'
+          }
+        ]
+      },
+      css: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/css/',
+            src: '**/*',
+            dest: 'public/css/'
+          }
+        ]
+      },
+      js: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/assets/js/',
+            src: '**/*',
+            dest: 'public/js/'
+          }
+        ]
+      },
+      index: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/views/',
+            src: 'index.html',
+            dest: 'public/'
+          }
+        ]
+      }
+    },
+    jshint: {
+      options: {
+        devel: false,
+        curly: true,
+        eqeqeq: true,
+        immed: false,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: false,
+        boss: true,
+        eqnull: true,
+        browser: true,
+        expr: true,
+        globals: {
+          Modernizr: true,
+          jQuery: true,
+          $: true,
+          console: true
+        }
+      },
+      files: ['package.json', 'Gruntfile.js', 'source/assets/js/plugins/*.js', 'source/assets/js/*.js']
+    },
+    csslint: {
+      options: {
+        important: false,
+        'adjoining-classes': false,
+        'known-properties': false,
+        'box-sizing': false,
+        'box-model': false,
+        'overqualified-elements': false,
+        'display-property-grouping': false,
+        'bulletproof-font-face': false,
+        'compatible-vendor-prefixes': false,
+        'regex-selectors': false,
+        errors: false,
+        'duplicate-background-images': false,
+        'duplicate-properties': false,
+        'empty-rules': false,
+        'selector-max-approaching': false,
+        gradients: false,
+        'fallback-colors': false,
+        'font-sizes': false,
+        'font-faces': false,
+        floats: false,
+        'star-property-hack': false,
+        'outline-none': false,
+        "import": false,
+        ids: false,
+        'underscore-property-hack': false,
+        'rules-count': false,
+        'qualified-headings': false,
+        'selector-max': false,
+        shorthand: false,
+        'text-indent': false,
+        'unique-headings': false,
+        'universal-selector': false,
+        'unqualified-attributes': false,
+        'vendor-prefix': false,
+        'zero-units': false
+      },
+      files: ['public/css/*.css']
+    },
+    htmlhint: {
+      options: {
+        'tagname-lowercase': true,
+        'attr-lowercase': true,
+        'attr-value-double-quotes': true,
+        'spec-char-escape': true,
+        'id-unique': true,
+        'src-not-empty': true,
+        'img-alt-require': true
+      },
+      files: ['public/*.html']
+    },
+    watch: {
+      options: {
+        livereload: true
+      },
+      // scripts: {
+      //   options: {
+      //     spawn: false
+      //   },
+      //   files: ['package.json', 'Gruntfile.js', 'server.js', 'routes.js'],
+      //   tasks: ['jshint']
+      // },
+      coffee: {
+        files: ['source/controllers/**/*.coffee', 'source/models/**/*.coffee'],
+        tasks: ['coffee', 'concat']
+      },
+      js: {
+        files: [
+          'source/assets/js/plugins/*.js',
+          'source/assets/js/*.js',
+          'source/controllers/**/*.js',
+          'source/models/**/*.js'],
+        tasks: ['concat']
+      },
+      jade: {
+        files: ['source/views/**/*.jade'],
+        tasks: ['jade', 'htmlhint', 'html2js']
+      },
+      html: {
+        files: ['source/views/**/*.html'],
+        tasks: ['copy:index', 'html2js']
+      },
+      ajax: {
+        files: ['source/views/ajax/**/*.*'],
+        tasks: ['copy:ajax']
+      },
+      less: {
+        files: ['source/assets/css/**/*.less'],
+        tasks: ['less', 'csslint']
+      },
+      fonts: {
+        files: ['source/assets/fonts/**/*'],
+        tasks: ['copy:fonts']
+      },
+      images: {
+        files: ['source/assets/images/**/*'],
+        tasks: ['copy:images']
+      },
+      videos: {
+        files: ['source/assets/videos/**/*'],
+        tasks: ['copy:videos']
+      },
+      xml: {
+        files: ['source/assets/xml/**/*'],
+        tasks: ['copy:xml']
+      },
+      swf: {
+        files: ['source/assets/swf/**/*'],
+        tasks: ['copy:swf']
+      }
+    },
+    imagemin: {
+      dist: {
+        options: {
+          optimizationLevel: 7,
+          progressive: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: 'public/images/',
+            src: '**/*',
+            dest: 'public/images/'
+          }
+        ]
+      }
+    },
+    cssmin: {
+      compress: {
+        files: [
+          {
+            'public/css/style.css': 'public/css/style.css'
+          }
+        ]
+      }
+    },
+    usemin: {
+      html: ['public/**/*.html'],
+      css: ['public/**/*.css']
+    },
+    uglify: {
+      options: {
+        compress: true,
+        beautify: false,
+        preserveComments: false
+      },
+      dist: {
+        files: [
+          {
+            'public/js/modernizr.js': 'source/assets/js/libs/modernizr-2.7.1.js',
+            'public/js/libs.js': ['source/assets/js/libs/jquery-1.11.1.js', 'source/assets/js/libs/plugins/*.js'],
+            'public/js/l10n.js': 'source/assets/js/l10n.js',
+            'public/js/script.js': ['source/assets/js/settings.js', 'source/assets/js/plugins/*.js']
+          }
+        ]
+      }
+    },
+    accessibility: {
+      options: {
+        accessibilityLevel: 'WCAG2A'
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: 'public/',
+            src: ['*.html'],
+            dest: 'reports/',
+            ext: '-report.txt'
+          }
+        ]
+      }
+    },
+    nodemon: {
+      local: {
+        script: 'server.js'
+      }
+    },
+    concurrent: {
+      options: {
+        limit: 4
+      },
+      local: {
+        tasks: ['nodemon:local', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
+    plato: {
+      options: {
+        jshint: grunt.file.readJSON('.jshintrc')
+      },
+      local: {
+        files: {
+          reports: ['source/**/*.js']
+        }
+      }
+    },
+    qunit: {
+      options: {
+        timeout: 10000,
+        '--cookies-file': 'test/cookies.txt'
+      },
+      all: {
+        options: {
+          urls: ['http://localhost:8000/test/test.html']
+        }
+      }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.'
+        }
+      }
+    },
+    clean: {
+      build: ['public']
+    }
+  });
+  grunt.file.expand('./node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
+  grunt.registerTask('default', ['clean', 'less', 'copy', 'concat', 'html2js', 'concurrent:local']);
+};
+
+// ---
+// generated by coffee-script 1.9.0

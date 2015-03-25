@@ -1,0 +1,143 @@
+<h2>
+  Create new service
+  <div class="dropdown pull-right">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+    data-toggle="dropdown" aria-expanded="true">
+      <!-- <span class="glyphicon glyphicon-cog"></span> -->
+      Configure fields
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    </ul>
+  </div>
+</h2>
+
+<form class="form-horizontal">
+  <fieldset>
+    <!-- Form Name-->
+    <legend></legend>
+    <!-- Select Basic-->
+    <div class="form-group">
+      <label for="project-name" class="col-md-3 control-label">Project</label>
+      <div class="col-md-6">
+        <select id="project-name" name="project-name" class="form-control">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div>
+    <!-- Select Basic-->
+    <div class="form-group">
+      <label for="issue-type" class="col-md-3 control-label">Issue Type</label>
+      <div class="col-md-6">
+        <select id="issue-type" name="issue-type" class="form-control">
+          <option value="1">Bug</option>
+          <option value="2">Task</option>
+          <option value="3">Improvement</option>
+        </select>
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="sumary" class="col-md-3 control-label">Sumary</label>
+      <div class="col-md-8">
+        <input id="sumary" name="sumary" type="text" placeholder="" required="" class="form-control input-md"/>
+      </div>
+    </div>
+    <!-- Select Basic-->
+    <div class="form-group">
+      <label for="priority" class="col-md-3 control-label">Priority</label>
+      <div class="col-md-6">
+        <select id="priority" name="priority" class="form-control">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div>
+    <!-- Textarea-->
+    <div class="form-group">
+      <label for="assignees" class="col-md-3 control-label">Assignees</label>
+      <div class="col-md-8">
+        <textarea id="assignees" name="assignees" class="form-control"></textarea>
+      </div>
+    </div>
+    <!-- Search input-->
+    <div class="form-group">
+      <label for="due-date" class="col-md-3 control-label">Due date</label>
+      <div class="col-md-6">
+        <input id="due-date" name="due-date" type="search" placeholder="" required="" class="form-control input-md"/>
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="component" class="col-md-3 control-label">Component/s</label>
+      <div class="col-md-6">
+        <input id="component" name="component" type="text" placeholder="" class="form-control input-md"/>
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="affects-version" class="col-md-3 control-label">Affects Version/s</label>
+      <div class="col-md-6">
+        <input id="affects-version" name="affects-version" type="text" placeholder="" class="form-control input-md"/>
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label for="fix-version" class="col-md-3 control-label">Fix Version/s</label>
+      <div class="col-md-6">
+        <input id="fix-version" name="fix-version" type="text" placeholder="" class="form-control input-md"/>
+      </div>
+    </div>
+    <!-- Textarea-->
+    <div class="form-group">
+      <label for="environment" class="col-md-3 control-label">Environment</label>
+      <div class="col-md-8">
+        <textarea id="environment" name="environment" class="form-control" style="height: 100px"></textarea>
+      </div>
+    </div>
+    <!-- Textarea-->
+    <div class="form-group">
+      <label for="description" class="col-md-3 control-label">Description</label>
+      <div class="col-md-8">
+        <textarea id="description" name="description" class="form-control" style="height: 100px"></textarea>
+      </div>
+    </div>
+    <!-- File Button-->
+    <div class="form-group">
+      <label for="attachment" class="col-md-3 control-label">Attachment</label>
+      <div class="col-md-8">
+        <input id="attachment" name="attachment" type="file" class="input-file"/>
+      </div>
+    </div>
+    <!-- Select Basic-->
+    <div class="form-group">
+      <label for="labels" class="col-md-3 control-label">Labels</label>
+      <div class="col-md-8">
+        <select id="labels" name="labels" class="form-control">
+          <option value="1">Option one</option>
+          <option value="2">Option two</option>
+        </select>
+      </div>
+    </div>
+    <!-- Textarea-->
+    <div class="form-group">
+      <label for="notes" class="col-md-3 control-label">Notes</label>
+      <div class="col-md-8">
+        <textarea id="notes" name="notes" class="form-control" style="height: 100px"></textarea>
+      </div>
+    </div>
+    <!-- Button (Double)-->
+    <div class="form-group">
+      <label for="submit" class="col-md-3 control-label"></label>
+      <div class="col-md-8">
+        <button id="submit" name="submit" class="btn btn-success">Create</button>
+        <button id="cancel" name="cancel" class="btn btn-link">Cancel</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

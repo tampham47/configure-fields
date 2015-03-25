@@ -1,0 +1,865 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parley</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/jquery.remodal.css" />
+    <link rel="stylesheet" href="css/jquery.remodal2.css" />
+    <link rel="stylesheet" href="css/jquery.remodal3.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery.remodal.js"></script>
+    <script src="js/jquery.remodal2.js"></script>
+    <script src="js/jquery.remodal3.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/t-functions.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $("#t20").click(function (e) {
+                $(".main-content").css('display', 'block');
+                $(".main-content2").css('display', 'none');
+                $("#all-footer").css('display', 'block');
+                $('.main-content-header').css('display', 'none');
+            });
+            $("#t20c").click(function (e) {
+                $(".main-content1").css('display', 'block');
+                $(".main-content22").css('display', 'none');
+                $("#all-footer").css('display', 'block');
+                $('.main-content-header').css('display', 'none');
+            });
+            $("#t21").click(function (e) {
+                $(".main-content2").css('display', 'block');
+                $(".main-content").css('display', 'none');
+                $("#all-footer").css('display', 'block');
+                $('.main-content-header').css('display', 'none');
+            });
+            $("#t21c").click(function (e) {
+                $(".main-content22").css('display', 'block');
+                $(".main-content1").css('display', 'none');
+                $("#all-footer").css('display', 'block');
+                $('.main-content-header').css('display', 'none');
+            });
+            $('.videolink').click(function (e) {
+                $('.main-content2').css('display', 'none');
+                $('.main-content22').css('display', 'none');
+                $('.main-content1').css('display', 'none');
+                $('.main-content').css('display', 'block');
+                $('.main-content-header').css('display', 'block');
+                $("#footer-area").css('display', 'none');
+                $("#all-footer").css('display', 'none');
+            });
+            $(".foter-finish").click(function (e) {
+                $("#footer-area").css('display', 'none');
+            });
+
+
+            $('#click').on('click', function () {
+                $('.drop-down').slideToggle('fast');
+            });
+            $('#t21').click(function (e) {
+                $('#t21').css('border-bottom', '1px solid #000');
+                $('#t20').css('border', 'none');
+            });
+            $('#t20').click(function (e) {
+                $('#t20').css('border-bottom', '1px solid #000');
+                $('#t21').css('border', 'none');
+            });
+
+
+            $('#t21c').click(function (e) {
+                $('#t21c').css('border-bottom', '1px solid #000');
+                $('#t20c').css('border', 'none');
+            });
+            $('#t20c').click(function (e) {
+                $('#t20c').css('border-bottom', '1px solid #000');
+                $('#t21c').css('border', 'none');
+            });
+
+        });
+
+        $(window).bind('scroll', function () {
+            if ($(window).scrollTop() > 70) {
+                $('.header').css('display', 'none');
+                $('.header-after').css('display', 'table');
+                $('#footer-area').addClass('footer-area-fixed');
+                $('.main-content').addClass('main-content1');
+                $('.main-content2').addClass('main-content22');
+            }
+            else {
+                $('.header').css('display', 'table');
+                $('.header-after').css('display', 'none');
+                $('#footer-area').removeClass('footer-area-fixed');
+                $('.main-content').removeClass('main-content1');
+                $('.main-content2').removeClass('main-content22');
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="wraper">
+        <div class="header">
+            <div class="inerwraper">
+                <div class="socila">
+                    <ul>
+                        <li><a href="https://www.facebook.com/pages/Parley/422925427856198"><img src="images/homepageicon/facebook.png" /></a></li>
+                        <li><a href="https://twitter.com/Parleylive"><img src="images/homepageicon/twitter.png" /></a></li>
+                        <li><a href="#"><img src="images/homepageicon/wechat.png" /></a></li>
+                        <li><a href="http://weibo.com/p/1006065486991299"><img src="images/homepageicon/weibo.png" /></a></li>
+                    </ul>
+                </div>
+                <div class="application">
+                    <div class="login"><a href="#log" data-name="holder-username"><p>登录</p></a></div>
+                    <div class="login" style="display:none"><p data-name="holder-username">Tam Pham</p></div>
+                </div>
+                <div class="log-container">
+                    <div class="logo">
+                        <img src="images/logo1.png" />
+                    </div>
+                    <div class="application">
+                        <ul>
+                            <li><a href="#"><img src="images/download1.png" /></a></li>
+                            <li><a href="http://android.myapp.com/myapp/detail.htm?apkName=com.parleylive.android.app"><img src="images/new_download.png" /></a></li>
+                            <li><a href="#"><img src="images/download3.png" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main-navigation">
+                <div class="navigation">
+                    <div class="inerwraper">
+                        <ul>
+                            <li id="t20">热视频</li>
+                            <li id="t21">Top 20 活动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-after">
+            <div class="inerwraper">
+                <div class="socila-after">
+                    <ul>
+                        <li><a href="https://www.facebook.com/pages/Parley/422925427856198"><img src="images/homepageicon/facebook.png" /></a></li>
+                        <li><a href="https://twitter.com/Parleylive"><img src="images/homepageicon/twitter.png" /></a></li>
+                        <li><a href="#"><img src="images/homepageicon/wechat.png" /></a></li>
+                        <li><a href="http://weibo.com/p/1006065486991299"><img src="images/homepageicon/weibo.png" /></a></li>
+                    </ul>
+                </div>
+                <div class="application-after">
+                    <div class="application-after-iner">
+                        <ul>
+                            <li id="click">下载APP</li>
+                        </ul>
+                    </div>
+                    <div class="login-after"><a href="#log" data-name="holder-username"><p>登录</p></a></div>
+                    <div class="remodal-3" data-remodal-3-id="log">
+                        <div class="log-in-popup">
+                            <h1>登录</h1>
+                            <ul>
+                                <li>
+                                    <a href="#", onclick="fbLogin()">使用Facebook账号</a>
+                                </li>
+                                <li><a href="#">使用QQ账号</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="drop-down">
+                        <a href="#"><img src="images/download1.png" /></a>
+                        <a href="http://android.myapp.com/myapp/detail.htm?apkName=com.parleylive.android.app"><img src="images/new_download.png" /></a>
+                        <a href="#"><img src="images/download3.png" /></a>
+                    </div>
+                </div>
+                <div class="logo-after">
+                    <img src="images/logo3.png" />
+                </div>
+            </div>
+            <div class="main-navigation">
+                <div class="navigation">
+                    <div class="inerwraper">
+                        <ul>
+                            <li id="t20c">微软雅黑</li>
+                            <li id="t21c">Top 20 活动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inerwraper">
+            <div class="main-content">
+                <div class="main-content-header"><h1>TOP 20活动 > 圣诞节狂欢派对！</h1></div>
+                <div class="right-area">
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p></a>
+                        </div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p></a>
+                        </div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"> <p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-wraper-1">
+                        <div class="profile-area">
+                            <img src="images/portrait1.png" />
+                            <h1>Irene</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video1.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                        <div class="remodal-1" data-remodal-1-id="video">
+                            <div class="videopopup">
+                                <div class="main-video">
+                                    <img src="images/video_03.png" />
+                                </div>
+                                <div class="left-side-video">
+                                    <div class="video-profile-area">
+                                        <div class="video-profile-area">
+                                            <img src="images/portrait1.png" />
+                                            <h1>Irene</h1>
+                                            <p>视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视频描述视</p>
+                                            <div class="comment-video"><h1>305描述视</h1></div>
+                                            <div class="comment-profile">
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                                <div class="full-comment-arae">
+                                                    <a href="#"><img src="images/portrait1.png" /></a>
+                                                    <div class="comment-profile-name-detail">
+                                                        <a href="#"><h1>Yummy</h1></a>
+                                                        <p>视频描述视频描述视频描述</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-area">
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait2.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video2.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait4.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video4.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait2.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video2.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait4.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video4.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait2.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video2.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                    <div class="video-wraper-2">
+                        <div class="profile-area">
+                            <img src="images/portrait4.png" />
+                            <h1>Yummy</h1>
+                        </div>
+                        <div class="video-area">
+                            <a href="#video"><img src="images/video4.png" /></a>
+                        </div>
+                        <div class="detail-area">
+                            <a href="#video"><p>视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述视频描述视频描述视频描述视频描述<br />视频描述视频描述<br /><span class="time-function">15条评论</span></p>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content2">
+                <div class="images-main-area">
+                    <div class="right-area">
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>1</p></div>
+                            </div>
+                            <div class="remodal" data-remodal-id="modal">
+                                <div class="popup">
+                                    <div class="popup-header"><h1>活动详情介绍</h1></div>
+                                    <div class="popup-image">
+                                        <img src="images/cover.png" />
+                                    </div>
+                                    <div class="popup-text">
+                                        <p>投票投票投:<br />投票<br />投票投票 20:00-21:00<br />投票投票<br />投票投票 20:00-21:00<br />投票投票投:<br />投票投票投投票投票投投票投票投<br />投票投票投投票投票投投票投票投<br />投票投票投.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>3</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>5</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>7</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>9</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-1">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>11</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-area">
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>2</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>4</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>6</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>8</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>10</p></div>
+                            </div>
+                        </div>
+                        <div class="image-wraper-2">
+                            <div class="images-area">
+                                <img src="images/cover.png" class="videolink" />
+                                <p class="videolink">圣诞节狂欢派对！<br /><br /><span class="images-description videolink">你的圣诞节是怎么过的？<br />快来分享下吧</span></p>
+                                <div class="images-area-more">
+                                    <a href="#modal"><img src="images/more.png" /></a>
+                                </div>
+                                <div class="images-area-number"><p>12</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-area" class="footer-area-fixed">
+            <div class="inerwraper" id="all-footer">
+                <div class="footer-logo">
+                    <img src="images/logo2.png" />
+                </div>
+                <div class="footer-application">
+                    <div class="foter-finish"><img src="images/close.png" /></div>
+                    <div class="ios"><img src="images/ios_13.png" /><p>iOS下载</p></div>
+                    <div class="androide"><img src="images/ios_13.png" /><p>Android下载</p></div>
+                </div>
+                <div class="footer-text">
+                    <p>下载拍乐，赢取上TV机会</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

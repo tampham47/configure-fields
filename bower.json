@@ -1,0 +1,22 @@
+{
+  "name": "ok1dollar",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-route": "1.2.16",
+    "angular-animate": "~1.2.16",
+    "angular-sanitize": "~1.2.16",
+    "angular-local-storage": "*",
+    "angular-http-auth": "*",
+    "angular-file-upload": "*",
+
+    "ng-ckeditor": "*",
+    "ng-file-upload": "*",
+    "ckeditor": "latest",
+    "bootstrap": "*",
+    "jquery": "~1.11.0",
+    "moment": "*",
+    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.3.0/chosen_v1.3.0.zip",
+    "modernizr": "~2.8.2"
+  }
+}

@@ -1,0 +1,136 @@
+'use strict';
+
+//facebook login
+var clientID = '357289024445295';  //1538204919775095  //357289024445295
+var currentPage = 1, file = {};
+var fbUser, parleyUserInfo, listVideo = {}, logType = '';
+var parleyUser = '{"Account":"thuankiet2000@gmail.com","Deviceid":"ffffffff-9c43-4be7-82cd-c0d70033c587","LoginType":"goldpay","Username":"12345678"}';
+var serverUrl = 'http://mobile888.parleylive.com';
+//serverUrl = 'http://54.169.23.42:3000/';
+
+function callAjax(url, post) {
+    var result = $.ajax({
+        url: url,
+        type: "POST",
+        data: post,
+        xhrFields: {
+            withCredentials: true
+        }
+    });
+
+    return result;
+}
+
+//default without type is facebook login
+function checkServerLogin(user, type) {
+    if (user) {
+       var url = serverUrl + "/user/login";
+        // var url = "dologin.do";
+        //case default means register case
+        if (!type) {
+            //var post = '{"LoginType":"facebook","Account":"' + user.id + '","Username": "","Deviceid":""}';
+            var post = '{"FacebookId":"1234567890","FacebookToken":"1234567890","Username":"000000"}';
+            console.log('check login with facebook');
+            console.log(post);
+        }
+        //case login or set username
+        else {
+            post = user;
+        }
+        var request = callAjax(url, post);
+
+        request.success(function(data) {
+            if (data != null) {
+                console.log('data', data);
+                //data = eval('(' + data + ')');
+                parleyUserInfo = data;
+                console.log(data);
+                //assume we logged fb success but not registered on server, so we set username
+                if (data.Retcode == 2) {
+                    $('#smallModalSetUserName').modal('show');
+                    console.log('set username');
+                }
+
+                //assume we pass this step, we already have account
+                if (data.Retcode == 1) {
+                    $('#smallModalSetUserName').modal('hide');
+                    console.log('login success, load videos ..');
+                    if (detectPage('list'))
+                       getData();
+
+                   //setup up file init
+                    file.Name = Date.now() + '.mp4';
+                    initUploadFile(file.Name);
+                }
+
+                if (data.Retcode == 9000001) {
+                    alert('username already exists, please input an other name!');
+                }
+            }
+        });
+        request.fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("error : " + JSON.stringify(jqXHR) + " : " + errorThrown);
+        });
+    }
+};
+
+function statusChangeCallback(response) {
+    console.log('statusChangeCallback', response);
+    var userName = $('[data-name="holder-username"]'),
+        loginGroup = $('.login');
+
+    if (response.status === 'connected') {
+        //set fb user info to global
+        console.log('Welcome! Fetching your information.... ');
+        FB.api('/me', function (response) {
+            console.log('Successful login for: ' + response.name);
+            $('p', userName).html(response.name);
+            username.attr('href', '');
+
+            fbUser = response;
+            logType = 'facebook';
+
+            //check login with server
+            // console.log('check login with server');
+            // checkServerLogin(fbUser);
+            //just for demo
+            //checkServerLogin(parleyUser, 'login');
+        });
+    } else if (response.status === 'not_authorized') {
+        $('#smallModal').modal('show');
+    } else {
+        $('#smallModal').modal('show');
+    }
+};
+
+function fbLogin() {
+    FB.login(function(res){
+        statusChangeCallback(res);
+    }, {scope: 'public_profile, email'});
+};
+
+window.fbAsyncInit = function () {
+    console.log('fbAsyncInit');
+
+    FB.init({
+        appId: clientID,
+        cookie: true,  // enable cookies to allow the server to access
+        // the session
+        xfbml: true,  // parse social plugins on this page
+        version: 'v2.1' // use version 2.1
+    });
+
+    FB.getLoginStatus(function (response) {
+        statusChangeCallback(response);
+    });
+};
+
+// Load the SDK asynchronously
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#version=v2.1&xfbml=1&appId=" + clientID;
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
