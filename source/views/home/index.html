@@ -1,19 +1,84 @@
 <h2>
   Create new service
-  <div class="dropdown pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-    data-toggle="dropdown" aria-expanded="true">
-      <!-- <span class="glyphicon glyphicon-cog"></span> -->
-      Configure fields
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-    </ul>
-  </div>
+  <button type="button" class="btn btn-default pull-right" data-container="body"
+    data-html="true" data-toggle="popover" data-placement="bottom">
+    <div style="display:none" class="pop-content">
+      <div class="row">
+        <div class="col-md-12">
+          <b>Show fields: </b>
+          <a href="javascript:;">All</a> | <a href="javascript:;">Custom</a>
+        </div>
+        <div class="col-md-6">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Affects
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Assignees
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Attachment
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Component/s
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Description
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Due Date
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Environment
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Fix Version/s
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Labels
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Notes
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Priority
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">Summary
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <span class="glyphicon glyphicon-cog"></span>
+    Configure fields
+    <span class="caret"></span>
+  </button>
 </h2>
 
 <form class="form-horizontal">
